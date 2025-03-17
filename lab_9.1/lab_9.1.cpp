@@ -25,43 +25,43 @@ int main()
     cout << "Введіть значення k: ";
     cin >> k;
 
-    vector<int> sum_indices_elements;
+    vector<int> sum;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) 
         {
             if (i + j == k) 
             {
-                sum_indices_elements.push_back(array[i][j]);
+                sum.push_back(array[i][j]);
             }
         }
     }
 
     double average = 0;
-    if (!sum_indices_elements.empty()) 
+    if (!sum.empty()) 
     {
-        for (int num : sum_indices_elements) 
+        for (int num : sum) 
         {
             average += num;
         }
-        average /= sum_indices_elements.size();
+        average /= sum.size();
     }
     cout << "Середнє арифметичне елементів із сумою індексів " << k << ": " << average << endl;
 
     
-    vector<int> even_elements;
+    vector<int> even;
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < cols; j++)
         {
             if (array[i][j] % 2 == 0) 
             {
-                even_elements.push_back(array[i][j]);
+                even.push_back(array[i][j]);
             }
         }
     }
 
     cout << "Одновимірний масив із парних елементів: ";
-    for (int num : even_elements)
+    for (int num : even)
     {
         cout << num << " ";
     }
